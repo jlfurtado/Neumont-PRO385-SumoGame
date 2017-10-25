@@ -991,7 +991,7 @@ Prefab:
     - target: {fileID: 114958855446654012, guid: 1f121c753a264fd4ea43b2c23ba4cf05,
         type: 2}
       propertyPath: ScenetoLoad
-      value: MainScene
+      value: SenTestScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1f121c753a264fd4ea43b2c23ba4cf05, type: 2}

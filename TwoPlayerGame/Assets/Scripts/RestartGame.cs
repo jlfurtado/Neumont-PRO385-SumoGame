@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class RestartGame : MonoBehaviour {
+    [SerializeField] private string ScenetoLoad;
     public void Restart()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene(ScenetoLoad);
     }
 }
