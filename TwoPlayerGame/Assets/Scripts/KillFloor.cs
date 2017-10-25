@@ -6,10 +6,13 @@ using UnityEngine.UI;
 public class KillFloor : MonoBehaviour {
     [SerializeField] private GameObject m_gameOverRef;
     [SerializeField] private float m_winCheckDelay;
+    [SerializeField] CountDown m_countDown;
+
     private Text m_gameOverText;
 
     private bool m_p1Hit;
     private bool m_p2Hit;
+    private bool m_checking = false;
 
 	// Use this for initialization
 	void Awake () {
@@ -37,9 +40,19 @@ public class KillFloor : MonoBehaviour {
 
     private IEnumerator CheckWinCondition()
     {
-        yield return new WaitForSeconds(m_winCheckDelay);
-        PauseManager.OnlyOne.Pause();
-        m_gameOverRef.SetActive(true);
-        m_gameOverText.text = (m_p1Hit) ? (m_p2Hit ? "Draw!" : "P1 Wins!") : (m_p2Hit ? "P2 Wins!" : "THIS IS A BUG!");
+        if (!m_checking)
+        {
+            m_checking = true;
+
+            m_countDown.StartCountDown(m_winCheckDelay);
+            yield return new WaitForSeconds(m_winCheckDelay);
+
+            PauseManager.OnlyOne.Pause();
+            m_gameOverRef.SetActive(true);
+            m_gameOverText.text = (m_p1Hit) ? (m_p2Hit ? "Draw!" : "P1 Wins!") : (m_p2Hit ? "P2 Wins!" : "THIS IS A BUG!");
+
+            m_checking = false;
+        }
+       
     }
 }
