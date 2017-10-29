@@ -10,8 +10,11 @@ public class PowerUpManager : MonoBehaviour {
     [SerializeField] private int m_maxPowerUps = 100;
     [SerializeField] private int m_maxFieldPowerUps = 5;
     [SerializeField] private Vector3[] m_spawnPositions;
-    [SerializeField] private float m_spawnDelay = 1.0f;
+    [SerializeField] private float m_spawnDelayStart = 1.0f;
+    [SerializeField] private float m_spawnDelayEnd = 0.05f;
+    [SerializeField] private float m_spawnDelayDelta = 1.0f;
 
+    private float m_spawnDelayCurrent;
     private PowerUp[] m_powerUps;
     private bool[] m_spawnPositionsOpen;
     private float m_timer;
@@ -44,7 +47,8 @@ public class PowerUpManager : MonoBehaviour {
             m_spawnPositionsOpen[j] = true;
         }
 
-        m_timer = m_spawnDelay;
+        m_spawnDelayCurrent = m_spawnDelayStart;
+        m_timer = m_spawnDelayStart;
 	}
 
     private GameObject GetRandomPrefab()
@@ -79,9 +83,11 @@ public class PowerUpManager : MonoBehaviour {
 
         if (m_timer <= 0.0f)
         {
-            m_timer += m_spawnDelay;
+            m_timer += m_spawnDelayCurrent;
             SpawnPowerUp();
         }
+
+        m_spawnDelayCurrent = Mathf.Lerp(m_spawnDelayCurrent, m_spawnDelayEnd, m_spawnDelayDelta * Time.deltaTime);
 	}
 
     private void SpawnPowerUp()

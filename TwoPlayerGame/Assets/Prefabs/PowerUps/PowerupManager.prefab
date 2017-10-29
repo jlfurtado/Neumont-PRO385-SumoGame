@@ -62,7 +62,7 @@ MonoBehaviour:
   - 50
   - 15
   m_maxPowerUps: 100
-  m_maxFieldPowerUps: 25
+  m_maxFieldPowerUps: 50
   m_spawnPositions:
   - {x: 0, y: 10, z: 0}
   - {x: 2, y: 10, z: 2}
@@ -74,4 +74,6 @@ MonoBehaviour:
   - {x: -4, y: 10, z: 4}
   - {x: -4, y: 10, z: -4}
   - {x: 0, y: 10, z: 0}
-  m_spawnDelay: 1
+  m_spawnDelayStart: 2
+  m_spawnDelayEnd: 0.05
+  m_spawnDelayDelta: 0.1

@@ -11,7 +11,6 @@ public class FollowCenter : MonoBehaviour {
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float slowdownRadius;
     [SerializeField] private float offsetMultiplier;
-    private float zoom = 0.5f;
     private bool shaking = false;
     private float shakeTimer;
     private Vector3 vel;
