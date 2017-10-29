@@ -15,6 +15,11 @@ public class PowerUp : MonoBehaviour {
         p2 = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerController>();
     }
 
+    public int GetIdx()
+    {
+        return m_myManagerIndex;
+    }
+
     public void HookIntoManager(PowerUpManager myManagerRef, string name, int idx)
     {
         m_myManager = myManagerRef;
@@ -37,5 +42,5 @@ public class PowerUp : MonoBehaviour {
         }
     }
 
-    public virtual void CauseEffect(PlayerController otherRigidBody) { }
+    public virtual void CauseEffect(PlayerController player) { }
 }

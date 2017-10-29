@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33803512524107114}
   - component: {fileID: 64245914031670744}
   - component: {fileID: 23298799813665262}
+  - component: {fileID: 114479296179260696}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -55,7 +56,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4de98db19f0308b44885779859765cc6, type: 2}
+  - {fileID: 2100000, guid: ec5e89369a2fb0249a7013bc59c9f9cc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,3 +96,16 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114479296179260696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1152686656738842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90c4f9d5031f17b4db5857554c749071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_shakeStrength: 5
+  m_shakeLength: 0.75

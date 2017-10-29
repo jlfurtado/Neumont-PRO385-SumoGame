@@ -9,6 +9,6 @@ public class PowerUp_Jump : PowerUp
 
     public override void CauseEffect(PlayerController player)
     {
-        player.GetRigidbody().AddForce(new Vector3(0.0f, jumpForce, 0.0f));
+        player.GetRigidbody().AddForce(new Vector3(0.0f, jumpForce * player.GetRigidbody().mass, 0.0f));
     }
 }

@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainScene.unity
     guid: f2403b3cfa011b6458d9481e654f4c02
+  - enabled: 1
+    path: Assets/Scenes/JustinTestScene.unity
+    guid: a2df7ebd559e7c14cb2b63d8593e2b1b

@@ -18,6 +18,6 @@ public class PowerUp_Phase : PowerUp {
     {
         player.gameObject.layer = m_phaseLayer;
         player.GhostMatIfy();
-        player.ResetStateAfter(m_maxLifeSpan);
+        player.ResetPhase(m_maxLifeSpan);
     }
 }

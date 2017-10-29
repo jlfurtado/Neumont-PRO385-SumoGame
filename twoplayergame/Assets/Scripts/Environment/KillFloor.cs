@@ -7,6 +7,10 @@ public class KillFloor : MonoBehaviour {
     [SerializeField] private GameObject m_gameOverRef;
     [SerializeField] private float m_winCheckDelay;
     [SerializeField] CountDown m_countDown;
+    [SerializeField] private float m_shakeStrength;
+    [SerializeField] private float m_shakeLength;
+    private FollowCenter m_mainCameraRef;
+    private PowerUpManager m_powerUpManagerRef;
 
     private Text m_gameOverText;
 
@@ -17,10 +21,12 @@ public class KillFloor : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
         m_gameOverText = m_gameOverRef.GetComponentInChildren<Text>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        m_mainCameraRef = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FollowCenter>();
+        m_powerUpManagerRef = GameObject.FindGameObjectWithTag("PowerUpManager").GetComponent<PowerUpManager>();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -30,11 +36,18 @@ public class KillFloor : MonoBehaviour {
         {
             m_p1Hit = true;
             StartCoroutine(CheckWinCondition());
+            m_mainCameraRef.BeginShake(m_shakeLength, m_shakeStrength);
         }
         else if (collision.collider.CompareTag("Player2"))
         {
             m_p2Hit = true;
             StartCoroutine(CheckWinCondition());
+            m_mainCameraRef.BeginShake(m_shakeLength, m_shakeStrength);
+        }
+        else if (collision.collider.CompareTag("PowerUp"))
+        {
+            // SAD FACE TOO MUCH LAZINESS TO CACHE
+            m_powerUpManagerRef.CollectAt(collision.gameObject.GetComponent<PowerUp>().GetIdx());
         }
     }
 
