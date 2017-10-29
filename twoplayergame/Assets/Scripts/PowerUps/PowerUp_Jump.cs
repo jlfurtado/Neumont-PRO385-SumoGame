@@ -7,9 +7,8 @@ public class PowerUp_Jump : PowerUp
 {
     [SerializeField] [Range(0.0f, 1000.0f)] private float jumpForce = 500.0f;
 
-    public override void CauseEffect(Rigidbody otherRigidBody)
+    public override void CauseEffect(PlayerController player)
     {
-        otherRigidBody.AddForce(new Vector3(0.0f, jumpForce, 0.0f));
-        this.gameObject.SetActive(false);
+        player.GetRigidbody().AddForce(new Vector3(0.0f, jumpForce, 0.0f));
     }
 }
