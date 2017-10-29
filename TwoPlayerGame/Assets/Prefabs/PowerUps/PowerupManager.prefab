@@ -57,10 +57,10 @@ MonoBehaviour:
   - {fileID: 114046719616093562, guid: 3b59f0a620a010c4eaf69eab8d6b65ae, type: 2}
   - {fileID: 114877948887023160, guid: 6c2c7f37e3db7074d8871271507bcb2c, type: 2}
   m_powerWeights:
-  - 25
-  - 10
-  - 50
+  - 30
   - 15
+  - 35
+  - 20
   m_maxPowerUps: 100
   m_maxFieldPowerUps: 50
   m_spawnPositions:
