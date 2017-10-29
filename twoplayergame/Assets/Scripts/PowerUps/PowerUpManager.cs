@@ -17,6 +17,7 @@ public class PowerUpManager : MonoBehaviour {
     void Awake () {
         m_powerUps = new PowerUp[m_maxPowerUps];
         m_spawnPositionsOpen = new bool[m_maxPowerUps];
+
         for (int j = 0; j < m_maxPowerUps; ++j) {
             m_powerUps[j] = Instantiate(GetRandomPrefab(), this.transform).GetComponent<PowerUp>();
             m_powerUps[j].HookIntoManager(this, "powerup|" + j, j);

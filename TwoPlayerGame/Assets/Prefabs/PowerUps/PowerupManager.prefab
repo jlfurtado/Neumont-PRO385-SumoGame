@@ -53,17 +53,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_powerUpPrefabList:
   - {fileID: 114805866756658650, guid: 79cd7e8ac86636441a6f81c3601c8f80, type: 2}
+  - {fileID: 114351207181178130, guid: 72d80b017070f194d94a3bf22faaabc0, type: 2}
+  - {fileID: 114046719616093562, guid: 3b59f0a620a010c4eaf69eab8d6b65ae, type: 2}
   m_maxPowerUps: 100
   m_maxFieldPowerUps: 5
   m_spawnPositions:
   - {x: 0, y: 5, z: 0}
-  - {x: 1, y: 5, z: 1}
-  - {x: 1, y: 5, z: -1}
-  - {x: -1, y: 5, z: -1}
-  - {x: -1, y: 5, z: 1}
-  - {x: 2, y: 5, z: -2}
   - {x: 2, y: 5, z: 2}
-  - {x: -2, y: 5, z: 2}
+  - {x: 2, y: 5, z: -2}
   - {x: -2, y: 5, z: -2}
+  - {x: -2, y: 5, z: 2}
+  - {x: 4, y: 5, z: -4}
+  - {x: 4, y: 5, z: 4}
+  - {x: -4, y: 5, z: 4}
+  - {x: -4, y: 5, z: -4}
   - {x: 0, y: 5, z: 0}
   m_spawnDelay: 1
