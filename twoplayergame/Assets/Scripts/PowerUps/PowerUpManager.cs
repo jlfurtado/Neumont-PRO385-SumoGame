@@ -14,6 +14,7 @@ public class PowerUpManager : MonoBehaviour {
 	void Start () {
 		for(int j = 0; j < MAX_POWERUPS;) {
             powerUps[j] = Instantiate(GetRandomPrefab(), this.transform);
+            powerUps[j].SetActive(false);
         }
 	}
 
