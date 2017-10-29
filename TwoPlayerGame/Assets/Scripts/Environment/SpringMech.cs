@@ -49,7 +49,15 @@ public class SpringMech : MonoBehaviour {
 
         Vector3 toBlockTwo = Block2.transform.position - Block1.transform.position;
         Spring.transform.position = (Block1.transform.position + Block2.transform.position) / 2.0f;
-        Spring.transform.rotation = Quaternion.LookRotation(Vector3.Cross(toBlockTwo.normalized, Vector3.up), toBlockTwo.normalized);
+
+        Vector3 v1 = Vector3.Cross(toBlockTwo.normalized, Vector3.up);
+        Vector3 v2 = toBlockTwo.normalized;
+
+        if (v1.magnitude > 0.01f)
+        {
+            Spring.transform.rotation = Quaternion.LookRotation(v1, v2);
+        }
+
         Spring.transform.localScale = new Vector3(Spring.transform.localScale.x, ((toBlockTwo.magnitude - 1.0f) * 0.49f), Spring.transform.localScale.z);
     }
 

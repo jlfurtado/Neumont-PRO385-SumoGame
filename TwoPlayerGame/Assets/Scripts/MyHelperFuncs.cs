@@ -22,6 +22,7 @@ public static class MyHelperFuncs
     {
         rigid.isKinematic = true;
         rigid.velocity = Vector3.zero;
+        rigid.angularVelocity = Vector3.zero;
     }
 
     public static void StartRigid(Rigidbody rigid)
